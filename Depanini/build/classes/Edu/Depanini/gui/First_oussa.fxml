@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="507.0" prefWidth="523.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Edu.Depanini.gui.First_oussaController">
+   <children>
+      <Button id="Button" fx:id="BTN_Sign" layoutX="298.0" layoutY="416.0" mnemonicParsing="false" onAction="#update_pres" prefHeight="39.0" prefWidth="142.0" style="-fx-background-color: #FF4500;" text="Sign-up" textFill="WHITE" />
+      <Label layoutX="242.0" layoutY="268.0" text="Role :" />
+      <TextField fx:id="PF_nom" layoutX="289.0" layoutY="29.0" promptText="First Name" />
+      <TextField fx:id="PF_prenom" layoutX="289.0" layoutY="74.0" promptText="Last Name" />
+      <TextField fx:id="PF_mdp" layoutX="289.0" layoutY="177.0" promptText="Password" />
+      <TextField fx:id="PF_email" layoutX="289.0" layoutY="122.0" promptText="Email : exemple@gmail.com" />
+      <TextField fx:id="PF_localisation" layoutX="295.0" layoutY="350.0" promptText="Location" />
+      <TextField fx:id="PF_prix" layoutX="295.0" layoutY="302.0" promptText="Hour price" />
+      <RadioButton fx:id="prestataire" layoutX="292.0" layoutY="268.0" mnemonicParsing="false" onAction="#get_role" text="Prestataire">
+         <toggleGroup>
+            <ToggleGroup fx:id="role" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="client" layoutX="413.0" layoutY="268.0" mnemonicParsing="false" onAction="#get_role" text="Client" toggleGroup="$role" />
+      <ChoiceBox fx:id="PF_service" layoutX="292.0" layoutY="224.0" prefHeight="26.0" prefWidth="142.0" />
+      <Label layoutX="233.0" layoutY="229.0" text="Service : " />
+      <ImageView fitHeight="507.0" fitWidth="227.0">
+         <image>
+            <Image url="@../../../images/new+orange+rectangle.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0">
+         <image>
+            <Image url="@../../../images/Image1-modified.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
