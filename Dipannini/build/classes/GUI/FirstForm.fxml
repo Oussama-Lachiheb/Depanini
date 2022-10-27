@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FirstFormController">
+   <children>
+      <Pane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #FC6600;">
+         <children>
+            <ImageView fitHeight="403.0" fitWidth="314.0" layoutX="50.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logo_depannini-removebg-preview.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Label fx:id="ForgotPassword" layoutX="555.0" layoutY="312.0" onMouseClicked="#LinkToResetPassword" prefHeight="26.0" prefWidth="125.0" style="-fx-font-size: 11;" text="Forgot Password?" underline="true" />
+      <TextField fx:id="tfemail" layoutX="551.0" layoutY="206.0" prefHeight="26.0" prefWidth="306.0" promptText="Email" />
+      <Button fx:id="btnlogin" layoutX="618.0" layoutY="380.0" mnemonicParsing="false" onMouseClicked="#Login" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #FC6600; -fx-background-radius: 40; -fx-font-size: 20;" text="Login" />
+      <PasswordField fx:id="tfpwd" layoutX="551.0" layoutY="274.0" prefHeight="26.0" prefWidth="306.0" promptText="Password" />
+      <Label layoutX="680.0" layoutY="443.0" style="-fx-font-size: 15;" text="Or" />
+      <Button fx:id="signup" layoutX="618.0" layoutY="477.0" mnemonicParsing="false" onMouseClicked="#signup" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #FC6600; -fx-background-radius: 40; -fx-font-size: 20;" text=" Sign Up" textAlignment="CENTER" />
+      <ImageView fitHeight="27.0" fitWidth="33.0" layoutX="503.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@accountbox%20icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="31.0" layoutX="501.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@lock%20icon.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="610.0" layoutY="58.0" prefHeight="38.0" prefWidth="157.0" style="-fx-font-weight: Bold; -fx-font-size: 35;" text="Welcome" textAlignment="CENTER" />
+      <Label layoutX="573.0" layoutY="113.0" prefHeight="30.0" prefWidth="246.0" style="-fx-font-size: 25;" text="Access your Acount" />
+   </children>
+</AnchorPane>

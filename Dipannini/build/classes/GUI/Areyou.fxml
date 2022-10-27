@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FirstFormController">
+   <children>
+      <ImageView fx:id="client" fitHeight="167.0" fitWidth="172.0" layoutX="753.0" layoutY="204.0" onMouseClicked="#client" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@client-removebg-preview2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="servicepro" fitHeight="216.0" fitWidth="172.0" layoutX="479.0" layoutY="196.0" onMouseClicked="#servicepro" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Service-removebg-preview-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="633.0" layoutY="94.0" text="ARE YOU ?" textAlignment="CENTER" underline="true">
+         <font>
+            <Font name="Calibri Bold" size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="504.0" layoutY="403.0" text="Service Provider" underline="true">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="809.0" layoutY="403.0" prefHeight="30.0" prefWidth="79.0" text="Client" underline="true">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Pane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #FC6600;">
+         <children>
+            <ImageView fitHeight="442.0" fitWidth="450.0" layoutX="35.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logo_depannini-removebg-preview.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
