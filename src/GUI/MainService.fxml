@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #FFFAF0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.MainServiceController">
+   <children>
+      <AnchorPane fx:id="Slidepane" layoutX="198.0" layoutY="77.0" prefHeight="43.0" prefWidth="801.0" visible="false">
+         <children>
+            <HBox layoutX="2.0" prefHeight="43.0" prefWidth="800.0" style="-fx-background-color: #ee8c6d; -fx-border-color: #ed5b2d;" visible="false">
+               <children>
+                  <JFXButton fx:id="Add_button_view" onMouseClicked="#OnAddScene" text=" Add New Service" textFill="#f6f6e9">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                     <graphic>
+                        <MaterialDesignIconView fill="#f6f6e9" glyphName="PLUS" size="20" wrappingWidth="12.0" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="View_button_view" layoutX="10.0" layoutY="10.0" onMouseClicked="#OnViewClicked" style="-fx-background-color: #ee8c6d;" text=" View Services" textFill="#f6f6e9">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                     <graphic>
+                        <MaterialDesignIconView fill="#f6f6e9" glyphName="EYE" size="20" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="3.0" layoutY="118.0" prefHeight="412.0" prefWidth="770.0">
+         <children>
+            <TableView fx:id="ServiceTable" layoutX="286.0" layoutY="51.0" prefHeight="310.0" prefWidth="631.0">
+              <columns>
+                <TableColumn fx:id="aff_Servicename" maxWidth="150.0" prefWidth="126.0" style="-fx-alignment: center;" text="Service Name" />
+                <TableColumn fx:id="aff_servicecategory" maxWidth="298.0" prefWidth="154.0" style="-fx-alignment: center;" text="Service Category" />
+                  <TableColumn fx:id="aff_servicedescription" maxWidth="462.0" minWidth="0.0" prefWidth="271.0" style="-fx-alignment: center;" text="Service Description" />
+                  <TableColumn fx:id="edit_col" maxWidth="577.0" prefWidth="79.0" style="-fx-alignment: center;" text="Edit" />
+              </columns>
+            </TableView>
+            <Label fx:id="messageEdit" layoutX="442.0" layoutY="10.0" prefHeight="27.0" prefWidth="284.0" textFill="RED">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: #ed5b2d;">
+         <children>
+            <Label layoutX="13.0" layoutY="549.0" prefHeight="47.0" prefWidth="47.0" text="?" textFill="#f6f6e9">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Label>
+            <VBox prefHeight="600.0" prefWidth="200.0">
+               <children>
+                  <JFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" ellipsisString="" prefHeight="164.0" prefWidth="202.0" textAlignment="CENTER">
+                     <graphic>
+                        <MaterialDesignIconView fill="#f6f6e9" glyphName="HOME" size="50" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="CategoryButton" graphicTextGap="25.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#CategorySlide_on_clicked" prefHeight="65.0" prefWidth="200.0" text="Services" textFill="#f6f6e9">
+                     <graphic>
+                        <MaterialDesignIconView fill="#f6f6e9" glyphName="DOMAIN" size="25" />
+                     </graphic>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton graphicTextGap="35.0" layoutX="10.0" layoutY="174.0" prefHeight="65.0" prefWidth="200.0" text="    Favorites" textFill="#f6f6e9">
+                     <graphic>
+                        <MaterialDesignIconView fill="#f6f6e9" glyphName="HEART" size="25" />
+                     </graphic>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton graphicTextGap="33.0" layoutX="10.0" layoutY="239.0" prefHeight="65.0" prefWidth="200.0" text="Reclamation" textFill="#f6f6e9">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="#f6f6e9" glyphName="EXCLAMATION_TRIANGLE" size="20" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton graphicTextGap="25.0" layoutX="10.0" layoutY="304.0" prefHeight="65.0" prefWidth="200.0" text="Contact Us" textFill="#f6f6e9">
+                     <graphic>
+                        <MaterialDesignIconView fill="#f6f6e9" glyphName="PHONE" size="25" />
+                     </graphic>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="ContenuePane" layoutX="198.0" layoutY="211.0" prefHeight="515.0" prefWidth="815.0" AnchorPane.topAnchor="211.0">
+         <children>
+            <JFXComboBox fx:id="myCombo" focusColor="#ee8c6d" layoutX="344.0" layoutY="45.0" prefHeight="25.0" prefWidth="193.0" />
+            <Label layoutX="166.0" layoutY="-9.0" text="Name">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="166.0" layoutY="44.0" text="Categories">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="163.0" layoutY="89.0" text="Description">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <JFXTextArea fx:id="ServiceDescription" focusColor="#ee8c6d" layoutX="344.0" layoutY="103.0" prefHeight="90.0" prefWidth="252.0" />
+            <JFXTextField fx:id="ServiceName" focusColor="#ee8c6d" layoutX="344.0" layoutY="-11.0" prefHeight="32.0" prefWidth="179.0" />
+            <JFXButton fx:id="AddServiceButton" layoutX="607.0" layoutY="276.0" onAction="#OnClickedServiceButton" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: #ed5b2d; -fx-background-radius: 40;" styleClass="-fx-background-radius" text="Add Service" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="messagelabel" layoutX="531.0" layoutY="237.0" prefHeight="27.0" prefWidth="284.0" textFill="RED">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="EditContenuePane" layoutX="208.0" layoutY="221.0" prefHeight="515.0" prefWidth="815.0">
+         <children>
+            <JFXComboBox fx:id="myComboedit" focusColor="#ee8c6d" layoutX="344.0" layoutY="45.0" prefHeight="25.0" prefWidth="193.0" />
+            <Label layoutX="166.0" layoutY="-9.0" text="Name">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="166.0" layoutY="44.0" text="Categories">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="163.0" layoutY="89.0" text="Description">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <JFXTextArea fx:id="ServiceDescriptionedit" focusColor="#ee8c6d" layoutX="344.0" layoutY="103.0" prefHeight="90.0" prefWidth="252.0" />
+            <JFXTextField fx:id="ServiceNameedit" focusColor="#ee8c6d" layoutX="344.0" layoutY="-11.0" prefHeight="32.0" prefWidth="179.0" />
+            <JFXButton fx:id="UpdateButton" layoutX="552.0" layoutY="276.0" onMouseClicked="#OnClickedUpdateButton" prefHeight="39.0" prefWidth="182.0" style="-fx-background-color: #ed5b2d; -fx-background-radius: 40;" styleClass="-fx-background-radius" text="Update Service" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="ServiceHomePane" layoutX="207.0" layoutY="123.0" prefHeight="450.0" prefWidth="589.0">
+         <children>
+            <HBox prefHeight="450.0" prefWidth="589.0" AnchorPane.bottomAnchor="0.0">
+               <children>
+                  <ScrollPane fx:id="scroll" prefHeight="450.0" prefWidth="593.0" style="-fx-background-color: #FFFAF0;" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <content>
+                        <GridPane fx:id="grid" accessibleRole="BUTTON" prefHeight="0.0" prefWidth="0.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                           <padding>
+                              <Insets left="-20.0" />
+                           </padding>
+                        </GridPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="TopServicePane" layoutX="798.0" layoutY="79.0" prefHeight="516.0" prefWidth="201.0">
+         <children>
+            <TableView fx:id="TopServiceTable" layoutY="43.0" prefHeight="478.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="TopServiceName" prefWidth="124.3333740234375" style="-fx-background-color: #ed5b2d;" text="Service Name" />
+                <TableColumn fx:id="TopNBDemandName" prefWidth="74.6666259765625" style="-fx-background-color: #ed5b2d;" text="Nb demand" />
+              </columns>
+            </TableView>
+            <Label prefHeight="36.0" prefWidth="189.0" text="        Top Service">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="Account_Slide_Pane" layoutX="855.0" layoutY="75.0" prefHeight="118.0" prefWidth="134.0" style="-fx-background-color: #ed5b2d;">
+         <children>
+            <VBox fx:id="SlideVBox" prefHeight="118.0" prefWidth="147.0">
+               <children>
+                  <JFXButton fx:id="View_Button" graphicTextGap="20.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#OnViewClicked" prefHeight="39.0" prefWidth="146.0" text="Service management" textFill="#f6f6e9">
+                     <graphic>
+                        <MaterialDesignIconView fill="#f6f6e9" glyphName="EYE" size="15" />
+                     </graphic>
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton graphicTextGap="20.0" onMouseClicked="#OnAddScene" prefHeight="39.0" prefWidth="146.0" text="      Add new service" textFill="#f6f6e9">
+                     <graphic>
+                        <MaterialDesignIconView fill="#f6f6e9" glyphName="PLUS" size="15" />
+                     </graphic>
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton graphicTextGap="40.0" layoutX="10.0" prefHeight="39.0" prefWidth="148.0" text=" Account Settings" textAlignment="CENTER" textFill="#f6f6e9">
+                     <font>
+                        <Font name="Calibri" size="10.0" />
+                     </font>
+                     <graphic>
+                        <MaterialDesignIconView fill="#f6f6e9" glyphName="SETTINGS" size="15" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="Deconnexion_Button_Service" graphicTextGap="0.0" layoutX="10.0" layoutY="49.0" onMouseClicked="#Deconnection_ServicePrestataireAccount" prefHeight="39.0" prefWidth="147.0" text="Deconnection" textFill="#f6f6e9">
+                     <font>
+                        <Font name="Calibri" size="10.0" />
+                     </font>
+                     <graphic>
+                        <MaterialDesignIconView fill="#f6f6e9" glyphName="POWER" size="15.0" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="200.0" prefHeight="77.0" prefWidth="800.0" style="-fx-background-color: #ee8c6d;">
+         <children>
+            <JFXButton fx:id="Return_Button" ellipsisString="" layoutX="601.0" layoutY="15.0" onMouseClicked="#On_Return_Button_Clicked" prefHeight="25.0" prefWidth="11.0" textFill="#ee8c6d" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="15.0">
+               <graphic>
+                  <MaterialDesignIconView fill="#f6f6e9" glyphName="CHEVRON_LEFT" size="40" visible="false" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="Down_Button" ellipsisString="" layoutX="688.0" layoutY="14.0" onMouseClicked="#slide_down" prefHeight="25.0" prefWidth="11.0" textFill="#ee8c6d" visible="false" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="15.0">
+               <graphic>
+                  <MaterialDesignIconView fill="#f6f6e9" glyphName="CHEVRON_DOWN" size="40" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="Account_SettingsButton_up" ellipsisString="" layoutX="750.0" layoutY="25.0" onMouseClicked="#OnACCOUNT_SETTING_Clicked_Button_up" prefHeight="40.0" prefWidth="40.0" textFill="#ee8c6d" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0">
+               <graphic>
+                  <MaterialDesignIconView fill="#f6f6e9" glyphName="ACCOUNT" onMousePressed="#OnACCOUNT_SETTING_Clicked_Button" size="40" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="Account_SettingsButton_down" ellipsisString="" layoutX="740.0" layoutY="15.0" onMouseClicked="#OnACCOUNT_SETTING_Clicked_Button_down" prefHeight="40.0" prefWidth="40.0" textFill="#ee8c6d" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0">
+               <graphic>
+                  <MaterialDesignIconView fill="#f6f6e9" glyphName="ACCOUNT" onMousePressed="#OnACCOUNT_SETTING_Clicked_Button" size="40" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="ServiceHomeButton" layoutX="-1.0" layoutY="9.0" onMouseClicked="#ServiceHomeButton_onClickedButton" prefHeight="58.0" prefWidth="189.0" text="Services">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <graphic>
+                  <Label prefHeight="52.0" prefWidth="182.0" text="Services" textFill="#f6f6e9">
+                     <font>
+                        <Font size="31.0" />
+                     </font>
+                  </Label>
+               </graphic>
+            </JFXButton>
+            <Label fx:id="section_label" layoutX="129.0" layoutY="14.0" opacity="0.7" prefHeight="58.0" prefWidth="91.0" textFill="#f6f6e9">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="ServiceContenue" layoutX="218.0" layoutY="199.0" prefHeight="547.0" prefWidth="815.0">
+         <children>
+            <Label layoutX="166.0" layoutY="-9.0" text="Name">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="166.0" layoutY="44.0" text="Categories">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="163.0" layoutY="89.0" text="Description">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <JFXTextArea fx:id="ServiceDescriptionedit1" editable="false" focusColor="#ee8c6d" layoutX="344.0" layoutY="103.0" prefHeight="90.0" prefWidth="252.0" />
+            <JFXTextField fx:id="ServiceNameedit1" editable="false" focusColor="#ee8c6d" layoutX="344.0" layoutY="-11.0" prefHeight="32.0" prefWidth="179.0" />
+            <JFXButton fx:id="RequestButton" layoutX="552.0" layoutY="276.0" onMouseClicked="#OnRequestButtonService_clicked" prefHeight="39.0" prefWidth="182.0" style="-fx-background-color: #ed5b2d; -fx-background-radius: 40;" styleClass="-fx-background-radius" text="Request Service" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXTextField fx:id="ServiceCategoryRequest" editable="false" focusColor="#ee8c6d" layoutX="344.0" layoutY="40.0" prefHeight="32.0" prefWidth="179.0" />
+            <JFXButton fx:id="Add_Favorites_Button" layoutX="300.0" layoutY="273.0" onMouseClicked="#On_ServiceFavorite_Clicked" prefHeight="39.0" prefWidth="182.0" style="-fx-border-color: #ed5b2d; -fx-background-radius: 40;" styleClass="-fx-background-radius" text="Add to favorites" textFill="#ed5b2d">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fx:id="heartIconFavorite" fill="#ed5b2d" glyphName="HEART" size="20" visible="false" />
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <Pane fx:id="SearchServicePane" layoutX="284.0" layoutY="80.0" prefHeight="36.0" prefWidth="343.0">
+         <children>
+            <JFXTextField prefHeight="25.0" prefWidth="244.0" promptText="Search..." />
+            <MaterialDesignIconView glyphName="WEB" layoutX="254.0" layoutY="26.0" opacity="0.77" size="20" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

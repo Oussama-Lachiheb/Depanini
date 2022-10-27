@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FFFAF0;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.EspaceClientReclamationController">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="200.0" style="-fx-background-color: #FF4500;">
+         <children>
+            <ImageView fitHeight="164.0" fitWidth="191.0" layoutX="18.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../Desktop/depp.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <TextField fx:id="typerec" layoutX="395.0" layoutY="106.0" />
+      <TextField fx:id="descrecl" layoutX="409.0" layoutY="248.0" />
+      <Label layoutX="240.0" layoutY="110.0" text="Reclamation on :">
+         <font>
+            <Font name="Segoe UI" size="14.0" />
+         </font></Label>
+      <Label layoutX="237.0" layoutY="252.0" text="Reclamation description :">
+         <font>
+            <Font name="Segoe UI" size="14.0" />
+         </font></Label>
+      <Button fx:id="ajouterreclamation" layoutX="370.0" layoutY="341.0" mnemonicParsing="false" onAction="#ajouterreclamationdhia" style="-fx-background-color: #FF4500;" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI" size="13.0" />
+         </font></Button>
+      <Label fx:id="erreur_rec" layoutX="327.0" layoutY="310.0" prefHeight="18.0" prefWidth="164.0" text="You must fill the blanks ! " textFill="#f50000" visible="false">
+         <font>
+            <Font name="Segoe UI" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="addedlbl" layoutX="313.0" layoutY="311.0" text="Reclamation added seccessfuly !" textFill="#1aab32" visible="false">
+         <font>
+            <Font name="Segoe UI" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

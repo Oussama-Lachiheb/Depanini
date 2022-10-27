@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #FFFAF0; -fx-background-image: ;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.EspaceClienDemandeController">
+   <children>
+      <Label layoutX="352.0" layoutY="111.0" text="Request date">
+         <font>
+            <Font name="Segoe UI" size="13.0" />
+         </font></Label>
+      <Label layoutX="321.0" layoutY="187.0" />
+      <Label layoutX="327.0" layoutY="220.0" prefHeight="17.0" prefWidth="168.0" text="Request description">
+         <font>
+            <Font name="Segoe UI" size="13.0" />
+         </font></Label>
+      <TextField fx:id="datej" layoutX="522.0" layoutY="107.0" prefHeight="25.0" prefWidth="34.0" promptText="JJ" />
+      <TextField fx:id="datem" layoutX="576.0" layoutY="107.0" prefHeight="25.0" prefWidth="41.0" promptText="MM" />
+      <TextField fx:id="datey" layoutX="640.0" layoutY="107.0" prefHeight="25.0" prefWidth="78.0" promptText="YYYY" />
+      <TextField fx:id="descriptionDemandedh" layoutX="522.0" layoutY="218.0" prefHeight="25.0" prefWidth="296.0" />
+      <Button fx:id="ModifierDemandedh" layoutX="619.0" layoutY="477.0" mnemonicParsing="false" onAction="#ModifierDemandedh" style="-fx-background-color: #FF4500;" text="Modify" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font></Button>
+      <Button fx:id="SupprimerDemandedh" layoutX="523.0" layoutY="478.0" mnemonicParsing="false" onAction="#SupprimerDemandedh" style="-fx-background-color: #FF4500;" text="Delete" textFill="#ebebeb" />
+      <Button fx:id="AjouterDemandedh" layoutX="425.0" layoutY="478.0" mnemonicParsing="false" onAction="#AjouterDemandedh" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: #FF4500;" text="Request" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI" size="13.0" />
+         </font></Button>
+      <TableView fx:id="afftableDemande" layoutX="379.0" layoutY="262.0" onMouseClicked="#selected_item_dhia" prefHeight="200.0" prefWidth="395.0" style="-fx-background-color: transparent;">
+        <columns>
+          <TableColumn fx:id="DateDemandedh" prefWidth="109.0" style="-fx-background-color: #FFDEAD;" text="Date " />
+            <TableColumn fx:id="descreptionDemandedh" prefWidth="282.0" style="-fx-background-color: #FFDEAD;" text="Request Description" />
+            <TableColumn fx:id="id_column" prefWidth="59.0" style="-fx-background-color: #FFDEAD;" text="id" visible="false" />
+        </columns>
+      </TableView>
+      <Button fx:id="affdemande" layoutX="705.0" layoutY="478.0" mnemonicParsing="false" onAction="#afficherdemande" style="-fx-background-color: #FF4500;" text="Show" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI" size="13.0" />
+         </font></Button>
+      <TextField fx:id="id_client_field" layoutX="523.0" layoutY="162.0" />
+      <Label layoutX="379.0" layoutY="166.0" text="Id_customer" />
+      <Pane fx:id="modif_pane_dhia" layoutX="296.0" layoutY="101.0" prefHeight="291.0" prefWidth="358.0" style="-fx-background-color: #FFFAF0; -fx-border-color: #FF4500;" visible="false">
+         <children>
+            <Label layoutX="92.0" layoutY="30.0" text="Request Modification ">
+               <font>
+                  <Font name="Segoe UI" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="day_mdf" layoutX="112.0" layoutY="83.0" prefHeight="25.0" prefWidth="41.0" />
+            <TextField fx:id="descrp_mdf" layoutX="145.0" layoutY="146.0" />
+            <TextField fx:id="year_mdf" layoutX="283.0" layoutY="83.0" prefHeight="25.0" prefWidth="59.0" />
+            <TextField fx:id="month_mdf" layoutX="207.0" layoutY="83.0" prefHeight="25.0" prefWidth="41.0" />
+            <Label layoutX="28.0" layoutY="87.0" text="Date :">
+               <font>
+                  <Font name="Segoe UI" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="157.0" layoutY="87.0" text="Month :">
+               <font>
+                  <Font name="Segoe UI" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="250.0" layoutY="87.0" text="Year :">
+               <font>
+                  <Font name="Segoe UI" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="28.0" layoutY="150.0" prefHeight="17.0" prefWidth="86.0" text="Description :">
+               <font>
+                  <Font name="Segoe UI" size="13.0" />
+               </font>
+            </Label>
+            <Button fx:id="conf_modif_dhia" layoutX="147.0" layoutY="243.0" mnemonicParsing="false" onAction="#conf_modiff" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #FF4500;" text="Confirm" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI" size="13.0" />
+               </font>
+            </Button>
+            <Label layoutX="80.0" layoutY="87.0" text="Day:">
+               <font>
+                  <Font name="Segoe UI" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label fx:id="erreur_dem" layoutX="400.0" layoutY="36.0" text="You must fill the blanks !" textFill="RED" visible="false">
+         <font>
+            <Font name="Segoe UI" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="addedd" layoutX="385.0" layoutY="37.0" text="Request added  successfully !" textFill="#0fab31" visible="false">
+         <font>
+            <Font name="Segoe UI" size="14.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="210.0" layoutY="10.0" prefHeight="77.0" prefWidth="800.0" style="-fx-background-color: #ee8c6d;" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="31.0" layoutY="21.0" text="Request" textFill="FLORALWHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Button contentDisplay="GRAPHIC_ONLY" layoutX="705.0" layoutY="26.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-radius: 40; -fx-background-color: #ee8c6d;" text="Button" textFill="#ee8c6d" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+               <graphic>
+                  <FontAwesomeIconView fx:id="ReturnDhiahssanButton" fill="#ed5b2d" glyphName="ARROW_CIRCLE_LEFT" onMouseClicked="#ReturnDhiaHssanButton_clicked" size="30" />
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: #ed5b2d;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="13.0" layoutY="549.0" prefHeight="47.0" prefWidth="47.0" text="?" textFill="#f6f6e9">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Label>
+            <VBox prefHeight="600.0" prefWidth="200.0">
+               <children>
+                  <JFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" ellipsisString="" prefHeight="164.0" prefWidth="202.0" textAlignment="CENTER">
+                     <graphic>
+                        <MaterialDesignIconView fill="#f6f6e9" glyphName="HOME" size="50" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton graphicTextGap="25.0" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="200.0" text="Services" textFill="#f6f6e9">
+                     <graphic>
+                        <MaterialDesignIconView fill="#f6f6e9" glyphName="DOMAIN" size="25" />
+                     </graphic>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton graphicTextGap="35.0" layoutX="10.0" layoutY="174.0" prefHeight="65.0" prefWidth="200.0" text="    Favorites" textFill="#f6f6e9">
+                     <graphic>
+                        <MaterialDesignIconView fill="#f6f6e9" glyphName="HEART" size="25" />
+                     </graphic>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton graphicTextGap="33.0" layoutX="10.0" layoutY="239.0" prefHeight="65.0" prefWidth="200.0" text="Reclamation" textFill="#f6f6e9">
+                     <graphic>
+                        <MaterialDesignIconView fill="#f6f6e9" glyphName="CREDIT_CARD" size="25" />
+                     </graphic>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton graphicTextGap="25.0" layoutX="10.0" layoutY="304.0" prefHeight="65.0" prefWidth="200.0" text="Contact Us" textFill="#f6f6e9">
+                     <graphic>
+                        <MaterialDesignIconView fill="#f6f6e9" glyphName="PHONE" size="25" />
+                     </graphic>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

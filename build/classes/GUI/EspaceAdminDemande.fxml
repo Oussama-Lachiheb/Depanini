@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="Afficher_dhia" onDragDetected="#afficherTAbleauDemandeAdmin" prefHeight="459.0" prefWidth="1200.0" style="-fx-background-color: #FFFAF0;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.EspaceAdminDemandeController">
+   <children>
+      <Button fx:id="affichertabldhia" layoutX="489.0" layoutY="380.0" mnemonicParsing="false" onAction="#AfficherTabl" prefHeight="36.0" prefWidth="102.0" style="-fx-background-color: #FF4500;" text="Afficher" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI" size="13.0" />
+         </font></Button>
+      <Pane layoutX="-8.0" layoutY="-1.0" prefHeight="460.0" prefWidth="205.0" style="-fx-background-color: #FF4500; -fx-background-image: ;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="28.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../Desktop/depp.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <TableView fx:id="TableauAffichaged" layoutX="197.0" layoutY="95.0" onMouseClicked="#select_admin_dhia" prefHeight="256.0" prefWidth="853.0">
+        <columns>
+          <TableColumn fx:id="IdD" prefWidth="75.0" text="IdDemande" />
+          <TableColumn fx:id="DateDemande" prefWidth="104.0" text="DateDemande" />
+            <TableColumn fx:id="DescriptionDemande" prefWidth="303.0" text="DescriptionDemande" />
+            <TableColumn fx:id="IdClients" prefWidth="69.0" text="IdClients" />
+            <TableColumn fx:id="IdPrestataire" prefWidth="71.0" text="IdPrestatire" />
+            <TableColumn fx:id="IdService" prefWidth="64.0" text="IdService" />
+            <TableColumn fx:id="Idcategorie" prefWidth="74.0" text="IdCategorie" />
+        </columns>
+      </TableView>
+      <Button fx:id="suppdemande" layoutX="246.0" layoutY="380.0" mnemonicParsing="false" onAction="#del_dem_dhia" prefHeight="36.0" prefWidth="102.0" style="-fx-background-color: #FF4500;" text="Supprimer" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI" size="13.0" />
+         </font></Button>
+      <Button fx:id="cherdemande" layoutX="716.0" layoutY="380.0" mnemonicParsing="false" onAction="#search_dem_dhia" prefHeight="36.0" prefWidth="102.0" style="-fx-background-color: #FF4500;" text="Chercher" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI" size="13.0" />
+         </font></Button>
+      <TextField fx:id="iddd_filed_dhia" layoutX="702.0" layoutY="420.0" />
+   </children>
+</AnchorPane>
